@@ -1,0 +1,40 @@
+<div class="mt-4">
+    <h1 class="display-4" *ngIf="id == 'new'">Nuevo Usuario</h1>
+    <h1 class="display-4" *ngIf="id != 'new'">Actualizar Usuario</h1>
+    <hr>
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+        ¡Formulario inválido!
+    </div>
+    <form (ngSubmit)="guardar(userform)" #userform="ngForm">
+        <div class="row">
+
+            <div class="col">
+                <div class="form-row">
+                    <label>Nombre:</label>
+                    <input class="form-control" [(ngModel)]="usuario.Nombre" name="nombre" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-row">
+                    <label>Apellido:</label>
+                    <input class="form-control" [(ngModel)]="usuario.Apellido" name="apellido" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-row">
+                    <label>Telefono:</label>
+                    <input class="form-control" [(ngModel)]="usuario.Telefono" name="telefono">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-row">
+                    <label>Correo:</label>
+                    <input class="form-control" [(ngModel)]="usuario.Correo" name="correo">
+                </div>
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-danger col-12 mt-4">Guardar</button>
+
+        </div>
+    </form>
+</div>

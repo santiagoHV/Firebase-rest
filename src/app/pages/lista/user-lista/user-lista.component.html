@@ -1,0 +1,24 @@
+<h1 class="display-4">Lista de usuarios</h1>
+<div class="row">
+    <div class="col">
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Tools</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of usuario; let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.Nombre}}</td>
+                    <td>{{item.Apellido}}</td>
+                    <td><button class="btn btn-light" [routerLink]="[item.id_usuario]">Editar</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
